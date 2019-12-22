@@ -1,15 +1,12 @@
 package com.reactivelabs.simpledatabase.data
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface PeopleDao {
 
-    @Insert
-    fun insertPeople(people: People): Long
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertPeople(people: People)
 
     @Delete
     fun deletePeople(people: People)
