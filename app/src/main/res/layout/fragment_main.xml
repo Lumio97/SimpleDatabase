@@ -25,6 +25,14 @@
                  app:layout_constraintStart_toStartOf="parent"
                  app:layout_constraintEnd_toEndOf="parent"
                  app:layout_constraintTop_toTopOf="parent"/>
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/mode"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonAdd"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:spinnerMode="dropdown"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/peopleList"
@@ -32,7 +40,7 @@
                 android:layout_height="wrap_content"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/buttonAdd"
+                app:layout_constraintTop_toBottomOf="@id/mode"
                 tools:listitem="@layout/item_people" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

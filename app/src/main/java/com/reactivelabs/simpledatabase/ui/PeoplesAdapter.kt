@@ -11,8 +11,9 @@ import kotlinx.android.synthetic.main.item_people.view.*
 
 class PeoplesAdapter(
     private val peoples: MutableList<People>,
-    private val actionDelete: (People) -> Unit,
-    private val actionEdit: (People) -> Unit
+    private val actionEdit: (People) -> Unit,
+    private val actionDelete: (People) -> Unit
+
 ) : RecyclerView.Adapter<PeoplesAdapter.PeopleHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PeopleHolder {
@@ -29,6 +30,12 @@ class PeoplesAdapter(
             notifyDataSetChanged()
         }
     }
+    fun updatePeoplesList(list : List<People>) {
+        peoples.clear()
+        peoples.addAll(list)
+        notifyDataSetChanged()
+    }
+
 
     class PeopleHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
